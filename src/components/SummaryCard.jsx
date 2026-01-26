@@ -1,5 +1,6 @@
 import { useExpenses } from "../hooks/useExpenses";
 import { IoMdTrendingDown } from "react-icons/io";
+import { MdOutlineCurrencyRupee } from "react-icons/md";
 
 
 export const SummaryCard = () =>{
@@ -15,7 +16,7 @@ export const SummaryCard = () =>{
 
             {/* display calculated total */}
             <p className="total-amount">
-                ${totalExpenses.toFixed(2)}
+                <MdOutlineCurrencyRupee />{totalExpenses.toFixed(2)}
             </p>
 
             {/* display transition count */}

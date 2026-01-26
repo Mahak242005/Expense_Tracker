@@ -164,6 +164,9 @@ body {
   margin: 20px 0;
   text-align: center;
 }
+.total-amount svg{
+  font-size: 2.5rem;
+}
 
 .transaction-count {
   text-align: center;
