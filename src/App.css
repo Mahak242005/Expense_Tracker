@@ -95,6 +95,10 @@ body {
   gap: 8px;
 }
 
+.form-group .amount svg{
+  font-size: 0.7rem;
+}
+
 .form-group label {
   font-weight: 600;
   color: #555;
@@ -425,6 +429,10 @@ body {
   font-size: 1.3rem;
   font-weight: bold;
   color: #667eea;
+}
+
+.expense-amount svg{
+  font-size: 1.1rem;
 }
 
 .btn-delete {

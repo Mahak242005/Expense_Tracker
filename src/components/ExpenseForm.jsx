@@ -3,6 +3,7 @@ import { LuCirclePlus } from "react-icons/lu";
 import { useExpenseContext } from "../context/ExpenseContext"
 import { validateExpense } from '../utils/validators';
 import { CATEGORIES } from "../utils/constants";
+import { LiaRupeeSignSolid } from "react-icons/lia";
 
 const ExpenseForm = () => {
 
@@ -56,7 +57,7 @@ const ExpenseForm = () => {
             </div>
 
             <div className="form-group">
-                <label>Amount ($)</label>
+                <label className="amount">Amount (<LiaRupeeSignSolid/>)</label>
                 <input type="number" name="amount" value={formData.amount} onChange={handleInputChange} placeholder="0.00" />
             </div>
 

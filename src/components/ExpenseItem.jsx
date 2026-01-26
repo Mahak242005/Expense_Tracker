@@ -1,5 +1,7 @@
 import { useExpenseContext } from "../context/ExpenseContext"
 import { FaRegTrashAlt } from "react-icons/fa";
+import { LiaRupeeSignSolid } from "react-icons/lia";
+
 
 export const ExpenseItem = ({ expense }) => {
 
@@ -20,7 +22,7 @@ export const ExpenseItem = ({ expense }) => {
                 </div>
             </div>
             <div className="expense-item-right">
-                <span className="expense-amount">${expense.amount.toFixed(2)}</span>
+                <span className="expense-amount"><LiaRupeeSignSolid />{expense.amount.toFixed(2)}</span>
                 <button className="btn-delete" onClick={() => deleteExpense(expense.id)}>
                     <FaRegTrashAlt />
                 </button>
