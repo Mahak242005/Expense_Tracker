@@ -3,6 +3,7 @@ import { useExpenses } from "../hooks/useExpenses"
 import { FiPieChart } from "react-icons/fi";
 import { CATEGORIES } from "../utils/constants";
 import { calculateBudgetPercentage } from "../utils/calculations";
+import { MdOutlineCurrencyRupee } from "react-icons/md";
 
 export const CategoryBreakdown = () => {
 
@@ -28,7 +29,7 @@ export const CategoryBreakdown = () => {
                             <div className="category-header">
                                 <span className="category-name">{cat}</span>
                                 <span className="category-amounts">
-                                    ${spent.toFixed(2)}
+                                    <MdOutlineCurrencyRupee />{spent.toFixed(2)}
                                     {budget && ` / $${budget.toFixed(2)}`}
                                 </span>
                             </div>
