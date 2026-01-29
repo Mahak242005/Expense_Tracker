@@ -1,4 +1,4 @@
-import { createContext, useContext, useState } from "react"
+import { createContext, useContext, useEffect, useState } from "react"
 
 const ExpenseContext = createContext();//create the context object
 
@@ -15,9 +15,35 @@ export const useExpenseContext = ()=>{
 
 export const ExpenseProvider =({children})=>{
 
-    const [expenses,setExpenses] = useState([]);
-    const [budgets,setBudgets] = useState([]);
-    const [filter,setFilter] = useState('all') //'all' :- doesnt filter anything but shows everything 
+    const [expenses,setExpenses] = useState(() =>{
+        const saved = localStorage.getItem('expenses');//parse: converts string to real javascript object/array
+        return saved ? JSON.parse(saved) : [];  //if data exists then stores it : if not returns an empty array as default
+    });
+
+    const [budgets,setBudgets] = useState(() =>{
+        const saved = localStorage.getItem('budgets');
+        return saved ? JSON.parse(saved) : {}
+    });
+
+    const [filter,setFilter] = useState(() =>{
+        return localStorage.getItem('filter') || 'all';  
+    }); //'all' :- doesnt filter anything but shows everything 
+
+
+    //store to local storage when data changes
+    useEffect(()=>{
+        localStorage.setItem('expenses',JSON.stringify(expenses));
+    },[expenses]); //stringify:converts javascript value to JSON string
+
+    useEffect(()=>{
+        localStorage.setItem('budgets',JSON.stringify(budgets));
+    },[budgets]);
+
+    useEffect(()=>{
+        localStorage.setItem('filter',filter)
+    },[filter]);
+
+
 
     //add new expenses
     const addExpense = (expense)=>{
