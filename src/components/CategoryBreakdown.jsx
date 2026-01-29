@@ -30,7 +30,7 @@ export const CategoryBreakdown = () => {
                                 <span className="category-name">{cat}</span>
                                 <span className="category-amounts">
                                     <MdOutlineCurrencyRupee />{spent.toFixed(2)}
-                                    {budget && ` / $${budget.toFixed(2)}`}
+                                    {budget && ` / $<MdOutlineCurrencyRupee />{budget.toFixed(2)}`}
                                 </span>
                             </div>
 
