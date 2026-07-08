@@ -6,6 +6,12 @@ This project is built with **React**, **custom hooks**, focusing on clean compon
 
 ---
 
+## 🚀 Live Demo
+
+🌐 https://flourishing-travesseiro-9cf89e.netlify.app
+
+---
+
 ## 🚀 Features
 
 * ✅ Add, view, and delete expenses
